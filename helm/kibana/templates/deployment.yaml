@@ -74,6 +74,7 @@ spec:
 {{- if .Values.extraEnvs }}
 {{ toYaml .Values.extraEnvs | indent 10 }}
 {{- end }}
+{{- if .Values.readinessProbe }}
         readinessProbe:
 {{ toYaml .Values.readinessProbe | indent 10 }}
           exec:
@@ -94,6 +95,7 @@ spec:
                 }
   
                 http "/app/kibana"
+{{- end }}
         ports:
         - containerPort: {{ .Values.httpPort }}
         resources:

@@ -18,8 +18,8 @@ secretMounts: []
 #    secretName: elastic-certificates
 #    path: /usr/share/elasticsearch/config/certs
 
-image: "docker.elastic.co/kibana/kibana"
-imageTag: "6.6.2"
+image: "docker.elastic.co/kibana/kibana-oss"
+imageTag: "6.7.1"
 imagePullPolicy: "IfNotPresent"
 
 resources:
@@ -81,12 +81,12 @@ ingress:
   #    hosts:
   #      - chart-example.local
 
-readinessProbe:
-  failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
-  successThreshold: 3
-  timeoutSeconds: 5
+# readinessProbe:
+#   failureThreshold: 3
+#   initialDelaySeconds: 10
+#   periodSeconds: 10
+#   successThreshold: 3
+#   timeoutSeconds: 5
 
 imagePullSecrets: []
 nodeSelector: {}
